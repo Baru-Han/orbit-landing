@@ -99,8 +99,7 @@ const IndexPage = () => {
           actions={
             <Stack justify="center" grow={false}>
               <Button
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeTYxsYCYCkExYyUuTX0IDB0gmr2UUtWXIyX4iMK-Jc_X0U6w/viewform"
-                external
+                href="#locations"
                 onClick={() => {
                   // eslint-disable-next-line no-undef
                   if (gtag) {
@@ -113,8 +112,7 @@ const IndexPage = () => {
                 Register as participant
               </Button>
               <Button
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfiqeXYsVUS5Q17QZT5GB4botBn-BKU2hzkOjlFxRJVfewdxA/viewform"
-                external
+                href="#new-locations"
                 type="white"
                 bordered
                 onClick={() => {
@@ -159,36 +157,59 @@ const IndexPage = () => {
           }
         />
         <Locations
+          id="locations"
           title="Hack the travel and discover the world from a whole new
     perspective."
           pattern={heroPattern}
           locations={[
             {
               backgroundImage: evLjublana,
-              eventName: 'Coming soon',
+              eventName: 'Register',
               location: 'Ljubljana',
               logo: logo,
+              onClick: () => {
+                window.location.href = '#locations';
+              },
             },
             {
               backgroundImage: evZagreb,
-              eventName: 'Coming soon',
+              eventName: 'Register',
               location: 'Zagreb',
               logo: logo,
+              onClick: () => {
+                window.location.href = '#locations';
+              },
             },
             {
               backgroundImage: evBarcelona,
-              eventName: 'Coming soon',
+              eventName: 'Register',
               location: 'Barcelona',
               logo: logo,
+              onClick: () => {
+                window.location.href = '#locations';
+              },
             },
             {
               backgroundImage: evBrno,
-              eventName: 'Coming soon',
+              eventName: 'Register',
               location: 'Brno',
               logo: logoSab,
+              onClick: () => {
+                window.location.href = '#locations';
+              },
             },
           ]}
-          locationsHeading="Future events"
+          locationsHeading="Choose event you want to attend"
+        />
+        <Timeline
+          id="new-locations"
+          background="white"
+          title="Locations we are working on"
+          content="A paragraph explaining what does that mean, maybe a link, or email where people can reach out to host another hackathon"
+          items={[
+            { time: 'Kyiv', title: 'Kyiv round possibly hosted by xyz.abc' },
+            { time: 'Berlin', title: 'Possibly some more informations' },
+          ]}
         />
         <Mission
           id="about"
@@ -360,8 +381,7 @@ const IndexPage = () => {
     attendees to have an enjoying and fulfilling experience."
           actions={
             <Button
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeTYxsYCYCkExYyUuTX0IDB0gmr2UUtWXIyX4iMK-Jc_X0U6w/viewform"
-              external
+              href="#locations"
               onClick={() => {
                 // eslint-disable-next-line no-undef
                 if (gtag) {
